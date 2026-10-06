@@ -1,0 +1,8 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DSH 入场动画 · 交互预览</title>
+<style>html,body{margin:0;background:#102631;color:#efdbb8;font:16px/1.7 system-ui}#root{min-height:100vh;box-sizing:border-box;padding:18vh 9vw;background:radial-gradient(ellipse at 80% 30%,#3c5551,transparent 60%)}h1{font:44px "Songti SC",serif}p{max-width:45em;color:#b8c5bb}textarea{display:block;box-sizing:border-box;width:min(600px,100%);height:100px;border:1px solid #a88b5d77;border-radius:14px;padding:18px;background:#16313a;color:#efdbb8;font:inherit}button{padding:12px 20px;border:1px solid #a88b5d;border-radius:12px;background:#203b41;color:#efdbb8;font:inherit;cursor:pointer}small{color:#93aaa8}</style>
+<main id="root"><small>DSH ENTRANCE / INTERACTIVE STUDY</small><h1>欢迎回来。</h1><p>这是独立插件的本地示例工作台。点击或按键，以水波纹揭开工作台；右上角可以调整效果并重播。所有素材均由本机加载。</p><textarea id="input" placeholder="退出后继续输入，检查焦点和点击保护。" aria-label="示例输入"></textarea><p><button id="counter">测试按钮 · 0 次</button></p><small>浏览器预览不代表所有 DSH / Electron 版本均已验收。</small></main>
+<script type="module">
+import {mountEntrance} from '/lib/client/controller.mjs';
+let clicks=0;document.querySelector('#counter').onclick=e=>{e.currentTarget.textContent=`测试按钮 · ${++clicks} 次`};
+document.querySelector('#input').focus();window.entrance=mountEntrance();
+</script></html>
