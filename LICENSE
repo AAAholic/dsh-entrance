@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2026 Sam Gao (vlln)
+Portions Copyright (c) 2026 Aholic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +20,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Scope of this license
+---------------------
+
+This license covers the software only: the source code, build scripts and code
+documentation. The four example PNG files under lib/assets/entrance/20261006/
+and docs/media/demo.gif are excluded. This repository grants no license to that
+artwork; see LICENSE-ASSETS and NOTICE.md.
+
+Nothing here grants rights in third-party characters, reference artwork, names,
+logos or trademarks, or implies endorsement by their owners.

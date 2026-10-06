@@ -1,0 +1,64 @@
+# Bundled example artwork — excluded from MIT
+
+This file defines the licensing boundary for the artwork shipped in this
+repository. [LICENSE](LICENSE) covers the software and code documentation.
+
+## Scope
+
+The files below are **not MIT-licensed**. This repository grants **no artwork
+license or third-party character, reference-artwork or trademark rights** in them.
+They are included as visual examples that can be replaced when adapting the code.
+Downloading, forking or installing the project is not evidence of permission from
+the underlying rights holders.
+
+| File | Role |
+| --- | --- |
+| `lib/assets/entrance/20261006/yoimiya-welcome.png` | Example character base image |
+| `lib/assets/entrance/20261006/yoimiya-expression.png` | Aligned expression frame |
+| `lib/assets/entrance/20261006/koi-emblem-v1.png` | Decorative koi emblem |
+| `lib/assets/entrance/20261006/festival-ribbon-v1.png` | Decorative ribbon |
+| `docs/media/demo.gif` | Browser-rendered demonstration containing the example artwork |
+
+SHA-256 of the bundled files:
+
+```text
+1749000b542681de82ebac020b6b062a31cc6bdd6d1a8e1f2d86d1adcb64711d  lib/assets/entrance/20261006/yoimiya-welcome.png
+160f21b4625acd86cd9a1ac1b89685a54d3fd9ff21ac5f54c29b0230c3b44c7e  lib/assets/entrance/20261006/yoimiya-expression.png
+f795090a3af9399f5dea79b1c9a8ded877553a3e43309e94d9c0b767cff21e64  lib/assets/entrance/20261006/koi-emblem-v1.png
+afc5ad2b961e48f37b18be4e7b83ae89c55e612e86ebacdd77b9e0a84c9fb7e2  lib/assets/entrance/20261006/festival-ribbon-v1.png
+cb674b2dfc39b1aa942f561ef3a7532bab17500d21c0a89dd5da364b45ac0b2a  docs/media/demo.gif
+```
+
+## Adapting and publishing
+
+The software can be studied, modified and redistributed under MIT. Do not infer
+permission to redistribute or commercialize these example images from the MIT
+license or the `package.json` license field. For a published derivative, replace
+the artwork and demo media with material you are entitled to use, or establish an
+independent basis for using each included asset.
+
+The depicted character, Yoimiya, belongs to miHoYo / HoYoverse. The author cannot
+grant third-party rights they do not hold. AI generation does not by itself clear
+character, reference-artwork or trademark rights. The fish and ribbon also have a
+reference-based generation workflow; their inclusion is not a blanket clearance
+of that reference material. See [NOTICE.md](NOTICE.md) and
+[docs/ASSETS-LICENSE.md](docs/ASSETS-LICENSE.md) for the provenance record.
+
+## AI disclosure and provenance
+
+The four PNGs contain C2PA records identifying an AI generation tool. Preserve
+their embedded `caBX` chunks when distributing those original PNG files; do not
+remove or falsify AI provenance labels. Retain the creation notes as well. An
+empty ingredient list does not establish that no reference image was used, and
+the manifest is not a copyright clearance or a complete account of the workflow.
+
+When publishing images or recordings containing this artwork, disclose the AI
+generated artwork and follow the publication platform's applicable labeling
+requirements. A browser recording or GIF does not automatically inherit the
+source PNGs' embedded C2PA records.
+
+## Unofficial status
+
+This is an independent community project. It is unaffiliated with DeepSeek, the
+upstream author, and the depicted character's rights holders. No endorsement,
+sponsorship or trademark license is granted or implied.
