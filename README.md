@@ -14,6 +14,8 @@
 - **四张示例 PNG 与演示 GIF 不在 MIT 范围内，本仓库不授予素材权利**。发布自己的版本时，请使用有权分发的素材与演示媒体，详见 [LICENSE-ASSETS](LICENSE-ASSETS)。
 - **示例画面经 AI 生成或编辑**（ChatGPT / gpt-image）。原 PNG 内含 C2PA 记录，请保留；发布图片或动画录屏时声明其中的 AI 生成画面。参考图流程与清单记录见 [NOTICE.md](NOTICE.md)。
 
+想制作自己的主题，先看 [通用创作流程](docs/CREATIVE-WORKFLOW.md)：找参考、准备素材、多版筛选，再分层实现、预览迭代和验证发布。
+
 ## 安装到 DSH
 
 目标接口按 **DSH 0.1.7-rc.2** 的官方 bundle 契约适配。其他版本请先查看宿主是否支持相同插件结构。
@@ -87,6 +89,8 @@ npm pack
 
 | 想了解 | 文档 |
 | --- | --- |
+| 如何从找参考、多版图像筛选走到可运行模板 | [通用创作流程](docs/CREATIVE-WORKFLOW.md) |
+| 人物、表情和装饰素材该怎么准备 | [素材规格](docs/ASSET-SPEC.md) |
 | 换成自己的人物、配色、装饰与插件名 | [模板替换教程](docs/TEMPLATE-GUIDE.md) |
 | 插件结构、接口、存储、资源路由 | [架构](docs/ARCHITECTURE.md) |
 | 分镜时间与构图关系 | [分镜与节奏](docs/STORYBOARD.md) |
