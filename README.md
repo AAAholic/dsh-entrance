@@ -1,5 +1,8 @@
 # DSH Entrance
 
+[![CI](https://github.com/AAAholic/dsh-entrance/actions/workflows/ci.yml/badge.svg)](https://github.com/AAAholic/dsh-entrance/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/AAAholic/dsh-entrance)](https://github.com/AAAholic/dsh-entrance/releases/latest)
+
 一个可安装、可拆解学习的 DeepSeek Harness 入场动画插件：宵宫分层登场、轻轻挥手、错时烟花、连续错峰跃水的鱼群、随风飘带，以及从点击位置扩散的水波退出。
 
 **非官方社区项目**，与 DeepSeek、上游作者及示例角色权利方无隶属、赞助或背书关系。
@@ -27,6 +30,8 @@ https://github.com/AAAholic/dsh-entrance
 ```
 
 等待安装结束，再启用 `dsh-entrance`。仓库包含预构建的 `lib/client.js`，普通安装不需要先构建。这里使用 GitHub 仓库地址，**没有声明已发布到 npm registry**，不要只填 `dsh-entrance` 包名。
+
+需要固定版本时，从 [Releases](https://github.com/AAAholic/dsh-entrance/releases/latest) 下载 `.tgz` 安装包，在同一输入框填写文件绝对路径或附件的直接下载地址。每个 Release 附版本说明、验证链接和 `SHA256SUMS`。
 
 也可以下载/克隆本仓库，在同一输入框填写仓库根目录的**绝对路径**。本地目录中应能看到 `package.json`、`cordis.patch.yml` 和 `lib/`。
 
@@ -84,6 +89,14 @@ npm pack
 ```
 
 当前版本生成 `dsh-entrance-1.0.0.tgz`。在 DSH 添加插件时填这个文件的绝对路径即可使用本地压缩包安装方式。`npm pack` 是本地打包，不会发布到 npm；生成包包含代码、预构建客户端、素材、许可和文档，开发脚本在 Git 仓库中。
+
+## CI 与版本发布
+
+GitHub CI 在 `main` 提交和 Pull Request 上运行：锁定依赖安装、构建一致性、单元测试、Chromium 浏览器检查，再打包并核对包内文件、许可和素材哈希。通过后保留安装包与校验文件，浏览器报告和截图另作检查证据。
+
+维护者发版时，更新 `package.json` 版本并准备 `docs/releases/v版本.md`，提交首行使用 `release: v版本`。该提交的验证任务通过后，发布任务才会创建对应 Tag/Release，并使用同一次 CI 的安装包。普通提交不会发布版本，已发布版本不会被覆盖；不发布到 npm registry。
+
+本地也可执行 `pnpm pack --pack-destination dist` 和 `pnpm run check:package` 检查安装包。当前 CI 使用 Node 22、固定 pnpm 与锁文件；它不替代原生 DSH 的视觉或性能验收。
 
 ## 实现与问题总结
 
