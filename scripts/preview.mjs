@@ -2,7 +2,7 @@ import http from 'node:http'
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { resolve, extname, sep } from 'node:path'
-const root = fileURLToPath(new URL('..', import.meta.url))
+const root = resolve(fileURLToPath(new URL('..', import.meta.url)))
 const mime = { '.mjs': 'text/javascript', '.js': 'text/javascript', '.html': 'text/html; charset=utf-8', '.png': 'image/png', '.svg': 'image/svg+xml', '.css': 'text/css' }
 export function createPreviewServer() {
   return http.createServer(async (req, res) => {
