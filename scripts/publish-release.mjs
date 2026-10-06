@@ -27,12 +27,12 @@ catch (error) {
   if (!error.stderr?.toString().includes('HTTP 404')) throw error
 }
 if (existing) assert.ok(existing.draft, 'Published releases are never overwritten')
-let taggedCommit
-try { taggedCommit = gh('api', `repos/${repository}/commits/${tag}`, '--jq', '.sha') }
+let tagRef
+try { tagRef = gh('api', `repos/${repository}/git/ref/tags/${tag}`, '--jq', '.ref') }
 catch (error) {
   if (!error.stderr?.toString().includes('HTTP 404')) throw error
 }
-if (taggedCommit) assert.equal(taggedCommit, commit, 'Existing tag points to another commit')
+if (tagRef) assert.equal(gh('api', `repos/${repository}/commits/${tag}`, '--jq', '.sha'), commit, 'Existing tag points to another commit')
 else gh('api', '--method', 'POST', `repos/${repository}/git/refs`, '-f', `ref=refs/tags/${tag}`, '-f', `sha=${commit}`)
 assert.equal(gh('api', `repos/${repository}/commits/${tag}`, '--jq', '.sha'), commit, 'Tag does not match the verified commit')
 if (existing) {
