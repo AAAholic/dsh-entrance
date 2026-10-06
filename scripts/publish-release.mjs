@@ -21,11 +21,12 @@ assert.equal(await readFile('dist/SHA256SUMS', 'utf8'), `${hash}  ${file}\n`, 'D
 const notes = await readFile(`docs/releases/${tag}.md`, 'utf8')
 const body = `${notes}\n\n提交：[${commit.slice(0, 7)}](https://github.com/${repository}/commit/${commit})\n\nCI：[本次验证](https://github.com/${repository}/actions/runs/${run})\n\n安装包 SHA-256：\`${hash}\`\n`
 await writeFile('dist/RELEASE-NOTES.md', body)
-let existing
-try { existing = JSON.parse(gh('api', `repos/${repository}/releases/tags/${tag}`)) }
-catch (error) {
-  if (!error.stderr?.toString().includes('HTTP 404')) throw error
+function findRelease() {
+  const ids = gh('api', '--paginate', `repos/${repository}/releases`, '--jq', `.[] | select(.tag_name == "${tag}") | .id`).split('\n').filter(Boolean)
+  assert.ok(ids.length <= 1, 'Multiple releases use the requested tag')
+  return ids.length ? JSON.parse(gh('api', `repos/${repository}/releases/${ids[0]}`)) : undefined
 }
+const existing = findRelease()
 if (existing) assert.ok(existing.draft, 'Published releases are never overwritten')
 let tagRef
 try { tagRef = gh('api', `repos/${repository}/git/ref/tags/${tag}`, '--jq', '.ref') }
@@ -43,7 +44,8 @@ if (existing) {
 }
 assert.equal(gh('api', `repos/${repository}/commits/${tag}`, '--jq', '.sha'), commit, 'Release tag does not match the verified commit')
 gh('release', 'upload', tag, `dist/${file}`, 'dist/SHA256SUMS', '--clobber')
-const uploaded = JSON.parse(gh('api', `repos/${repository}/releases/tags/${tag}`))
+const uploaded = findRelease()
+assert.ok(uploaded?.draft, 'Expected a draft release before publishing')
 const asset = uploaded.assets.find(asset => asset.name === file)
 assert.equal(asset?.size, bytes.length, 'Uploaded archive size mismatch')
 assert.equal(asset?.digest, `sha256:${hash}`, 'Uploaded archive digest mismatch')

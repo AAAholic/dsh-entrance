@@ -1,6 +1,6 @@
 {
   "name": "dsh-entrance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "packageManager": "pnpm@11.19.0",
   "description": "DSH cinematic entrance with layered storyboard, koi, ribbon motion and water-ripple exit",
