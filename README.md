@@ -15,7 +15,7 @@
 在 DSH 的插件管理页面选择“添加插件”，在“包名或地址”中填入：
 
 ```text
-https://github.com/zihaoyan1023-ai/dsh-entrance
+https://github.com/AAAholic/dsh-entrance
 ```
 
 等待安装结束，再启用 `dsh-entrance`。仓库包含预构建的 `lib/client.js`，普通安装不需要先构建。这里使用 GitHub 仓库地址，**没有声明已发布到 npm registry**，不要只填 `dsh-entrance` 包名。

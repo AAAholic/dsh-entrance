@@ -11,5 +11,5 @@
   "engines": {"node": ">=22"},
   "scripts": {"build": "node scripts/build.mjs", "check": "node scripts/build.mjs --check", "test": "node --test tests/*.test.mjs", "test:browser": "node scripts/verify-browser.mjs", "preview": "node scripts/preview.mjs"},
   "devDependencies": {"esbuild": "0.28.1", "playwright": "1.62.1"},
-  "repository": {"type": "git", "url": "https://github.com/zihaoyan1023-ai/dsh-entrance.git"}
+  "repository": {"type": "git", "url": "https://github.com/AAAholic/dsh-entrance.git"}
 }
