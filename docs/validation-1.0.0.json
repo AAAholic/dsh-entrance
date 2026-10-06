@@ -1,0 +1,110 @@
+{
+  "checks": [
+    {
+      "name": "Startup reaches the settled storyboard",
+      "pass": true
+    },
+    {
+      "name": "Three different fish are rendered",
+      "pass": true
+    },
+    {
+      "name": "Overlapping arc leaps show at least two fish throughout a full cycle",
+      "pass": true
+    },
+    {
+      "name": "Exit restores the input focus",
+      "pass": true
+    },
+    {
+      "name": "Exit key never enters workspace input",
+      "pass": true
+    },
+    {
+      "name": "Independent settings remain enabled without an active intro",
+      "pass": true
+    },
+    {
+      "name": "Independent settings omit unrelated wallpaper controls",
+      "pass": true
+    },
+    {
+      "name": "Every new control defaults to the midpoint",
+      "pass": true
+    },
+    {
+      "name": "Settings persist locally",
+      "pass": true
+    },
+    {
+      "name": "Two-fish preference reaches the actual renderer",
+      "pass": true
+    },
+    {
+      "name": "Water origin follows the pointer",
+      "pass": true
+    },
+    {
+      "name": "A held pointer keeps the input shield after visual exit",
+      "pass": true
+    },
+    {
+      "name": "Exit click does not trigger the workspace button",
+      "pass": true
+    },
+    {
+      "name": "Workspace is usable after exit",
+      "pass": true
+    },
+    {
+      "name": "Narrow settings have no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Narrow scene retains three fish",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion keeps a static ribbon",
+      "pass": true
+    },
+    {
+      "name": "Replay returns focus to the Shadow DOM button",
+      "pass": true
+    },
+    {
+      "name": "Disable removes the controller and dialog",
+      "pass": true
+    },
+    {
+      "name": "No uncaught browser errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "scope": "Independent browser controller and production assets; native verification is separate.",
+  "status": "passed",
+  "release": "1.0.0",
+  "date": "2026-10-06",
+  "nodeTests": {
+    "passed": 16,
+    "failed": 0
+  },
+  "dshBoot": {
+    "version": "0.1.7-rc.2",
+    "bundleMetadata": "passed",
+    "patchComposition": "passed"
+  },
+  "cordisLifecycle": {
+    "version": "4.0.4",
+    "passed": 2,
+    "clientRendering": "DOM/controller and React stubbed in this specific host test; real browser rendering checked separately"
+  },
+  "nativeDesktop": "Existing customized whale-girl installation: updated controls observed after restart; full new native replay/FPS acceptance not established. Independent bundle native installation not claimed.",
+  "assetsSHA256": {
+    "lib/assets/entrance/20261006/yoimiya-welcome.png": "1749000b542681de82ebac020b6b062a31cc6bdd6d1a8e1f2d86d1adcb64711d",
+    "lib/assets/entrance/20261006/yoimiya-expression.png": "160f21b4625acd86cd9a1ac1b89685a54d3fd9ff21ac5f54c29b0230c3b44c7e",
+    "lib/assets/entrance/20261006/festival-ribbon-v1.png": "afc5ad2b961e48f37b18be4e7b83ae89c55e612e86ebacdd77b9e0a84c9fb7e2",
+    "lib/assets/entrance/20261006/koi-emblem-v1.png": "f795090a3af9399f5dea79b1c9a8ded877553a3e43309e94d9c0b767cff21e64"
+  }
+}
