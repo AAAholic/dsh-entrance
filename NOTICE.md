@@ -46,3 +46,5 @@ MIT 权利，不表示官方授权，也不自动获得原角色、参考图或�
 
 See [ASSETS-LICENSE.md](docs/ASSETS-LICENSE.md) for the asset record and replacement
 requirements.
+
+维护者已确认将当前自用的完整图片与演示 GIF 作为可替换的示例模板公开。该确认不改变上述代码与第三方角色权利的区分。

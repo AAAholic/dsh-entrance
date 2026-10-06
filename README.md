@@ -81,6 +81,7 @@ npm pack
 
 | 想了解 | 文档 |
 | --- | --- |
+| 换成自己的人物、配色、装饰与插件名 | [模板替换教程](docs/TEMPLATE-GUIDE.md) |
 | 插件结构、接口、存储、资源路由 | [架构](docs/ARCHITECTURE.md) |
 | 分镜时间与构图关系 | [分镜与节奏](docs/STORYBOARD.md) |
 | 最后水波如何真正擦除画面 | [水波退出](docs/WATER-EXIT.md) |
