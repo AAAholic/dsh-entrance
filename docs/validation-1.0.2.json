@@ -1,0 +1,204 @@
+{
+  "checks": [
+    {
+      "name": "Startup reaches the settled storyboard",
+      "pass": true
+    },
+    {
+      "name": "Three different fish are rendered",
+      "pass": true
+    },
+    {
+      "name": "Overlapping arc leaps show at least two fish throughout a full cycle",
+      "pass": true
+    },
+    {
+      "name": "Exit restores the input focus",
+      "pass": true
+    },
+    {
+      "name": "Exit key never enters workspace input",
+      "pass": true
+    },
+    {
+      "name": "Only one quiet settings entry is exposed on the workspace",
+      "pass": true
+    },
+    {
+      "name": "Settings entry starts collapsed and controls the correct panel",
+      "pass": true
+    },
+    {
+      "name": "Opening settings updates expanded state and focuses its close control",
+      "pass": true
+    },
+    {
+      "name": "The same entry closes settings and retains focus",
+      "pass": true
+    },
+    {
+      "name": "Keyboard activation opens settings",
+      "pass": true
+    },
+    {
+      "name": "Escape closes settings and restores the entry focus",
+      "pass": true
+    },
+    {
+      "name": "Shortcut settings return focus to the previous workspace input",
+      "pass": true
+    },
+    {
+      "name": "Outside interaction closes settings without blocking the workspace",
+      "pass": true
+    },
+    {
+      "name": "Independent settings remain enabled without an active intro",
+      "pass": true
+    },
+    {
+      "name": "Independent settings omit unrelated wallpaper controls",
+      "pass": true
+    },
+    {
+      "name": "Every new control defaults to the midpoint",
+      "pass": true
+    },
+    {
+      "name": "Settings persist locally",
+      "pass": true
+    },
+    {
+      "name": "Saving settings preserves the single workspace entry",
+      "pass": true
+    },
+    {
+      "name": "Replay lives in settings and closes the panel before starting",
+      "pass": true
+    },
+    {
+      "name": "Two-fish preference reaches the actual renderer",
+      "pass": true
+    },
+    {
+      "name": "Water origin follows the pointer",
+      "pass": true
+    },
+    {
+      "name": "A held pointer keeps the input shield after visual exit",
+      "pass": true
+    },
+    {
+      "name": "Panel replay returns focus to its visible launcher",
+      "pass": true
+    },
+    {
+      "name": "Exit click does not trigger the workspace button",
+      "pass": true
+    },
+    {
+      "name": "Workspace is usable after exit",
+      "pass": true
+    },
+    {
+      "name": "Narrow settings have no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Settings and replay remain reachable at 320×568",
+      "pass": true
+    },
+    {
+      "name": "Settings content can scroll at 320×568",
+      "pass": true
+    },
+    {
+      "name": "Settings and replay remain reachable at 900×480",
+      "pass": true
+    },
+    {
+      "name": "Settings content can scroll at 900×480",
+      "pass": true
+    },
+    {
+      "name": "Narrow scene retains three fish",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion keeps a static ribbon",
+      "pass": true
+    },
+    {
+      "name": "Reduced-motion replay returns focus to the visible settings button",
+      "pass": true
+    },
+    {
+      "name": "Disable removes the controller and dialog",
+      "pass": true
+    },
+    {
+      "name": "No uncaught browser errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "scope": "Independent browser controller and production assets; native verification is separate.",
+  "status": "passed",
+  "release": "1.0.2",
+  "date": "2026-10-08",
+  "environment": {
+    "os": "macOS 27.0.1 (26A434)",
+    "hardware": "Apple M5 Pro, 64 GB",
+    "node": "24.19.0",
+    "playwright": "1.62.1",
+    "browser": "Google Chrome 154.0.8037.98, headless; CI independently uses Playwright Chromium headless shell on Ubuntu 24.04 / Node 22"
+  },
+  "nodeTests": {
+    "passed": 16,
+    "failed": 0
+  },
+  "build": "Committed generated client matched current source",
+  "runtimeSHA256": {
+    "lib/client.js": "298231410c12851ffb248304501891ebebd052ef1dc08a79ad51f5e4fa21fd60",
+    "lib/client/controller.mjs": "82ffe9b607fae8dd998cde3cfa4dfddf21b1f0c113a34d35d89bd2f3476ec08f",
+    "lib/client/wallpaper-settings-view.mjs": "bc26b0f8113a90762afc52f054e42e9c637b3e966d725c8acf5e2efb25904cd1"
+  },
+  "nativeDesktop": {
+    "status": "partial native observation",
+    "application": "DeepSeek Harness 0.2.0-rc.2",
+    "target": "Existing customized whale-girl installation; four client files synchronized with backups and hash verification",
+    "standalonePackageNativeAcceptance": "not established",
+    "performanceMeasurement": "not measured",
+    "sourceIntegration": {
+      "passed": 29,
+      "failed": 0,
+      "scope": "Chrome with native source modules, actual assets, simulated host dialog suspension; separate from native window observations"
+    },
+    "localClientSHA256": {
+      "lib/client.js": "0cf250074eb216c33da9462bf1358b2c6d25989568de667c79551b1ec7f9c2c8",
+      "lib/client/companion.mjs": "1687d89235ca5517b0d4870c0f32cec149b136d1f7f0b779f699b50cba5f22fc",
+      "lib/client/wallpaper-effects.mjs": "67c99f41e53fa4b93b44e50a2eba62199f953916e8f632568276a2dc16af4ef5",
+      "lib/client/wallpaper-settings-view.mjs": "38cf9072766f416cd6afe8daf76393c6284ba7284e228f2f38259493d0dcd0d0"
+    },
+    "observations": {
+      "singleSettingsPill": "observed after restart",
+      "panelToggle": "observed",
+      "replayInsidePanel": "observed; Yoimiya scene fully displayed and pointer exit returned to workspace",
+      "workspaceInput": "no message was sent and the composer remained empty",
+      "finalFocusFix": "deployed and passed source integration with simulated host suspension; final native replay/exit retest blocked by computer-use noWindowsAvailable error"
+    },
+    "observationBuilds": {
+      "initialUIClient": "8a1a43ab12585845442ea04decab75b169614624535b43a8f9365cea0cbedd4d",
+      "finalFocusClient": "0cf250074eb216c33da9462bf1358b2c6d25989568de667c79551b1ec7f9c2c8",
+      "scope": "Initial build received native replay/exit observation; final build received settings-panel opening observation. Do not infer full native acceptance for final focus behavior."
+    }
+  },
+  "assetsSHA256": {
+    "lib/assets/entrance/20261006/yoimiya-welcome.png": "1749000b542681de82ebac020b6b062a31cc6bdd6d1a8e1f2d86d1adcb64711d",
+    "lib/assets/entrance/20261006/yoimiya-expression.png": "160f21b4625acd86cd9a1ac1b89685a54d3fd9ff21ac5f54c29b0230c3b44c7e",
+    "lib/assets/entrance/20261006/koi-emblem-v1.png": "f795090a3af9399f5dea79b1c9a8ded877553a3e43309e94d9c0b767cff21e64",
+    "lib/assets/entrance/20261006/festival-ribbon-v1.png": "afc5ad2b961e48f37b18be4e7b83ae89c55e612e86ebacdd77b9e0a84c9fb7e2",
+    "docs/media/demo.gif": "cb674b2dfc39b1aa942f561ef3a7532bab17500d21c0a89dd5da364b45ac0b2a"
+  },
+  "creativeGuidance": "Three historical DS trials diagnosed; revised guidance reviewed for instruction interpretation, no new independent creative production acceptance claimed."
+}

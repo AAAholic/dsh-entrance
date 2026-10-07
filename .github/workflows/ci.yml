@@ -35,9 +35,38 @@ jobs:
         run: pnpm run check
       - name: Run unit tests
         run: pnpm test
-      - name: Install Chromium and system dependencies
-        run: pnpm exec playwright install --with-deps chromium
+      - name: Configure bounded Ubuntu package downloads
+        timeout-minutes: 1
+        run: |
+          # The runner's Azure HTTP mirror stalled the previous apt update.
+          # Keep the same Ubuntu packages, using the official HTTPS archive.
+          sudo python3 - <<'PY'
+          from pathlib import Path
+          import re
+          paths = [Path('/etc/apt/apt-mirrors.txt'), Path('/etc/apt/sources.list')]
+          paths += list(Path('/etc/apt/sources.list.d').glob('*.list'))
+          paths += list(Path('/etc/apt/sources.list.d').glob('*.sources'))
+          for path in paths:
+              if path.is_file():
+                  original = path.read_text()
+                  updated = re.sub(r'https?://azure\.archive\.ubuntu\.com/ubuntu', 'https://archive.ubuntu.com/ubuntu', original)
+                  if updated != original:
+                      path.write_text(updated)
+                      print(f'Updated Ubuntu mirror in {path}')
+          Path('/etc/apt/apt.conf.d/80-dsh-downloads').write_text(
+              'Acquire::http::Timeout "30";\nAcquire::https::Timeout "30";\nAcquire::Retries "2";\n'
+          )
+          PY
+      - name: Install Chromium system dependencies
+        timeout-minutes: 5
+        run: pnpm exec playwright install-deps chromium
+      - name: Install Chromium headless shell
+        timeout-minutes: 5
+        env:
+          PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: '60000'
+        run: pnpm exec playwright install --only-shell chromium
       - name: Run browser checks
+        timeout-minutes: 3
         run: pnpm run test:browser
       - name: Pack and verify installable archive
         run: |

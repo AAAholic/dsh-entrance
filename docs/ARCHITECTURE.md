@@ -99,7 +99,7 @@ stateDiagram-v2
 
 控制器返回 `defaultPreferences`、`getPreferences()`、`subscribe()`、`save(patch)`、`replay()`、`canReplay()`、`getStatus()` 和 `dispose()`。`getStatus().active` 表示控制器可用，`sceneActive` 表示当前有欢迎层，两者不能混用，否则关闭欢迎后所有设置也会被禁用。
 
-浮动面板与宿主设置分区共用 `mountMotionSettings(..., { welcomeOnly: true })`，仅显示欢迎控件。底层模型为兼容已有视图仍含旧壁纸字段，但独立插件不渲染工作壁纸，也不显示其控件。
+右上角常驻入口为单一“动画设置”按钮，重播操作位于设置面板内。浮动面板与宿主设置分区共用 `mountMotionSettings(..., { welcomeOnly: true })`，仅显示欢迎控件。底层模型为兼容已有视图仍含旧壁纸字段，但独立插件不渲染工作壁纸，也不显示其控件。
 
 | 字段 | 默认/有效范围 |
 | --- | --- |

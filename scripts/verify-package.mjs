@@ -46,7 +46,7 @@ async function walk(path) {
   }
   return paths
 }
-const expected = ['cordis.patch.yml', 'README.md', 'LICENSE', 'LICENSE-ASSETS', 'NOTICE.md', ...await walk('lib'), ...await walk('docs')]
+const expected = ['cordis.patch.yml', 'README.md', 'CHANGELOG.md', 'LICENSE', 'LICENSE-ASSETS', 'NOTICE.md', ...await walk('lib'), ...await walk('docs')]
 for (const path of expected) {
   assert.equal(sha256(readPacked(path)), sha256(await readFile(resolve(root, path))), `Stale or changed packaged file: ${path}`)
 }
