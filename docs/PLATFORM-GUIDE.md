@@ -69,6 +69,26 @@ npm.cmd run check:package
 - 如需端口 4321：macOS 用 `PORT=4321 npm run preview`；PowerShell 先 `$env:PORT = '4321'`，再 `npm.cmd run preview`，退出后用 `Remove-Item Env:PORT` 清除本次设置。PowerShell 不使用 `export` 或反斜杠续行；逐条执行也兼容不支持 `&&` 的 5.1。语法依据：[PowerShell 引号规则](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-5.1)、[执行策略](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1)。
 - `check` 只核对客户端构建一致性；浏览器证据输出至 `test-results/`。`pack` 输出至 `dist/`，`check:package` 默认读取当前包名/版本对应的 `.tgz` 并生成校验文件；二者都不是发布命令。
 
+## 工具找不到或 Python 缺包
+
+操作系统相同也不代表智能体的终端拥有相同 `PATH` 或 Python 环境。出现 `command not found`、`ModuleNotFoundError` 时，先核对当前可执行文件和解释器；智能体可能已有可用的捆绑运行时。通过当前客户端提供的能力或实际安装状态定位，核实版本后调用，不复制作者电脑的私有路径，也不默认安装另一套工具。
+
+Python、Pillow、FFmpeg、ImageMagick 等不是运行本插件的必要依赖，只在选用的素材或编码流程确实需要时检查。例如选择 Pillow 时，对**实际准备调用的解释器**检查模块，而不只检查系统的 `python3`：
+
+```sh
+# macOS，替换成已核实的真实路径
+"/实际/Python/bin/python3" -c "import sys, PIL; print(sys.executable); print(PIL.__version__)"
+```
+
+```powershell
+# Windows PowerShell，& 用于调用带引号的可执行文件路径
+& 'C:\实际\Python\python.exe' -c "import sys, PIL; print(sys.executable); print(PIL.__version__)"
+```
+
+后续处理沿用同一解释器。`node`、`pnpm` 或图像编码器不在 `PATH`，与完全未安装不是同一结论；找到候选后还要实际调用核验。所需工具确实不存在时选择已具备的替代能力，或报告安装/接入方案，不直接宣称图片无法处理。
+
+不要默认 `timeout` 命令存在或在不同 shell 中含义一致。优先使用执行工具提供的超时与取消能力；自行写处理脚本时，可采用有文档的进程超时机制并处理异常和清理，例如 Python 的 [subprocess.run](https://docs.python.org/3/library/subprocess.html#subprocess.run)。图片体积、编码与交付限制的排查见 [素材规格](ASSET-SPEC.md#文件体积与预览交付)。
+
 ## DSH 安装与平台验收
 
 通过当前 DSH 插件页、用户给出的路径或实际安装状态确认宿主版本和安装目标。将仓库或 `.tgz` 的**实际绝对路径**填入“添加插件”，按 [README](../README.md#安装到-dsh) 操作；无需猜测 macOS 应用包路径、Windows 安装盘或数据目录。

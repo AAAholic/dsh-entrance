@@ -21,13 +21,13 @@
 
 ## 交给你的智能体制作个人版本
 
-第一版指引供 DS 或其他智能体克隆后试用。它不预设图像工具、插件供应商或操作系统，也不要求你复述作者的历史聊天。将自己的素材和偏好与这段话一起交给智能体：
+这份持续修订的指引供 DS 或其他智能体克隆后试用。它从角色研究、场景构思走到定向选素材，不预设图像工具、插件供应商或操作系统，也不要求你复述作者的历史聊天。将自己的素材和偏好与这段话一起交给智能体：
 
-> 请克隆 https://github.com/AAAholic/dsh-entrance 到新的工作目录，阅读根目录 SKILL.md。根据我的角色或 OC 与风格要求制作个人入场作品，保留分层登场与水波退场。素材处理使用你实际已有的能力；缺少能力时说明缺口并提供核实过的方案。请检查实际产物，交付可运行预览和已通过/未验证的记录，不覆盖我的现有安装，也不要自行公开发布。
+> 请克隆 https://github.com/AAAholic/dsh-entrance 到新的工作目录，阅读根目录 SKILL.md。根据我的角色或 OC 与风格要求，先研究特点、用简短策划卡选定场景，再定向找素材制作个人入场作品，保留分层登场与水波退场。素材处理使用你实际已有的能力；缺少能力时说明缺口并提供核实过的方案。请检查实际产物，交付可运行预览和真实验收记录，不覆盖我的现有安装，也不要自行公开发布。
 
 使用最新 `main` 的完整克隆；已发布的 `v1.0.1` 安装包不包含本轮新增的 Skill。支持 Agent Skills 的客户端可按自身方式加载此仓库；其他智能体可以显式读取 `SKILL.md`。不要只复制单个入口文件，它依赖同仓库中的文档、源码和案例资源。
 
-当前仍是源码适配模板，尚无通用主题导入器、自动人物绑定或单图模式开关。指引会说明这些边界；本轮没有改动动画运行时代码。进一步阅读 [macOS / Windows 命令](docs/PLATFORM-GUIDE.md)、[案例分析](docs/CASE-STUDY.md)、[验收标准](docs/ACCEPTANCE.md) 和 [第一轮试用与反馈](docs/AGENT-TRIAL.md)。传统创作概览见 [通用创作流程](docs/CREATIVE-WORKFLOW.md)。
+当前仍是源码适配模板，尚无通用主题导入器、自动人物绑定或单图模式开关。指引会说明这些边界；本轮没有改动动画运行时代码。进一步阅读 [创作流程与策划卡](docs/CREATIVE-WORKFLOW.md)、[macOS / Windows 命令](docs/PLATFORM-GUIDE.md)、[案例分析](docs/CASE-STUDY.md)、[验收标准](docs/ACCEPTANCE.md) 和 [试用与反馈](docs/AGENT-TRIAL.md)。
 
 ## 安装到 DSH
 
@@ -116,8 +116,8 @@ GitHub CI 在 `main` 提交和 Pull Request 上运行：锁定依赖安装、构
 | macOS / Windows 环境、命令和原生验证边界 | [平台适配](docs/PLATFORM-GUIDE.md) |
 | 案例中的判断、可复用机制与非通用选择 | [案例阅读](docs/CASE-STUDY.md) |
 | 怎样判断作品合格以及记录未验证项 | [验收标准](docs/ACCEPTANCE.md) |
-| 用独立智能体试用初版并反馈 | [试用记录](docs/AGENT-TRIAL.md) |
-| 如何从找参考、多版图像筛选走到可运行模板 | [通用创作流程](docs/CREATIVE-WORKFLOW.md) |
+| 用独立智能体试用并反馈 | [试用记录](docs/AGENT-TRIAL.md) |
+| 从角色研究、场景构思到定向选素材与可运行模板 | [创作流程与策划卡](docs/CREATIVE-WORKFLOW.md) |
 | 人物、表情和装饰素材该怎么准备 | [素材规格](docs/ASSET-SPEC.md) |
 | 换成自己的人物、配色、装饰与插件名 | [模板替换教程](docs/TEMPLATE-GUIDE.md) |
 | 插件结构、接口、存储、资源路由 | [架构](docs/ARCHITECTURE.md) |
